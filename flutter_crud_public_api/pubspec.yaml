@@ -7,11 +7,11 @@ environment:
   sdk: ">=3.0.0 <4.0.0"
 
 dependencies:
-  d_input: ^0.0.9
-  d_method: ^0.2.1
+  d_input: ^0.4.2
+  fd_log: ^0.0.8
+  http: ^1.2.2
   flutter:
     sdk: flutter
-  http: ^1.0.0
 
 dev_dependencies:
   flutter_test:

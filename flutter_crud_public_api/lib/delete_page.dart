@@ -1,5 +1,4 @@
-import 'package:d_input/d_input.dart';
-import 'package:d_method/d_method.dart';
+import 'package:fd_log/fd_log.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
@@ -20,7 +19,7 @@ class DeletePage extends StatelessWidget {
               int postId = 1;
               String url = 'https://jsonplaceholder.typicode.com/posts/$postId';
               http.delete(Uri.parse(url)).then((response) {
-                DMethod.printResponse(response);
+                FDLog().response(response);
               });
             },
             child: const Text('Delete Post'),

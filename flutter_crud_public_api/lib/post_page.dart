@@ -1,5 +1,5 @@
 import 'package:d_input/d_input.dart';
-import 'package:d_method/d_method.dart';
+import 'package:fd_log/fd_log.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
@@ -14,12 +14,12 @@ class PostPage extends StatelessWidget {
         body: {
           'title': title,
           'body': body,
-          'userId': userId, // userId.toString()
+          'userId': userId.toString(),
         },
       );
-      DMethod.printResponse(response);
+      FDLog(useDebug: true).response(response);
     } catch (e) {
-      DMethod.printTitle('createPost-error', e.toString());
+      FDLog(useDebug: true).title('createPost-error', e.toString());
     }
   }
 

@@ -1,6 +1,5 @@
 import 'dart:convert';
-
-import 'package:d_method/d_method.dart';
+import 'package:fd_log/fd_log.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
@@ -17,7 +16,9 @@ class _GetPageState extends State<GetPage> {
   getPosts() {
     String url = 'https://jsonplaceholder.typicode.com/posts';
     http.get(Uri.parse(url)).then((response) {
-      DMethod.printResponse(response);
+      FDLog(
+        useDebug: true,
+      ).response(response);
 
       List list = jsonDecode(response.body);
       posts = List.from(list);

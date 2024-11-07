@@ -1,5 +1,5 @@
 import 'package:d_input/d_input.dart';
-import 'package:d_method/d_method.dart';
+import 'package:fd_log/fd_log.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
@@ -17,7 +17,7 @@ class PutPage extends StatelessWidget {
         'userId': userId.toString(),
       },
     ).then((response) {
-      DMethod.printResponse(response);
+      FDLog(useDebug: true).response(response);
     });
   }
 
